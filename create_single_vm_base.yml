@@ -5,7 +5,7 @@
 
   tasks:
   - name: Run Execution
-    ansible.builtin.shell: python create_single_vm_multi_lang.py 2>&1
+    ansible.builtin.shell: python create_single_vm_multi_lang.py 2>&1 > /tmp/output.log
     register: out
     args:
       chdir: /home/itadmin/repo/code-base
