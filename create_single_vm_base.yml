@@ -1,0 +1,15 @@
+---
+- name: Create Single VM Multi Lang
+  hosts: ansible-host-1
+  remote_user: itadmin
+
+  tasks:
+  - name: Run Execution
+    ansible.builtin.shell: python create_single_vm_multi_lang.py 2>&1
+    register: out
+    args:
+      chdir: /home/itadmin/repo/code-base
+
+  - debug: var=out.stdout_lines
+
+# EOF
