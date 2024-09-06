@@ -1,0 +1,20 @@
+- name: Update Windows
+  hosts: ansible-win2k19
+  remote_user: sa_ansible
+
+  tasks:
+
+  - name: Download the code from GitHub
+    git:
+      repo: https://github.com/jaymcdaniel83/win-update-01.git
+      dest: C:\Code\install_update
+      version: main
+
+  - name: Install Windows Update
+    win_shell: .\win_update_mulit_machine.ps1 > C:\Code\install_update\install_update.log
+    become: yes
+    become_method: runas
+    args:
+      chdir: C:\Code\install_update
+
+# EOF
