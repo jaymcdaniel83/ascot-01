@@ -1,5 +1,5 @@
 - name: Update Windows
-  hosts: windows-hosts
+  hosts: all
   remote_user: sa_ansible
 
   tasks:
