@@ -5,6 +5,12 @@
   tasks:
 
   - name: Download the code from GitHub
+    git:
+      repo: https://github.com/jaymcdaniel83/win-update-01.git
+      dest: C:\Code\install_update
+      version: main
+
+  - name: Download the code from GitHub
     win_shell: git clone https://github.com/jaymcdaniel83/win-update-01.git C:\Code\install_update
     become: yes
     become_method: runas

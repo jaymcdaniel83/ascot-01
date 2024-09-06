@@ -4,12 +4,6 @@
 
   tasks:
 
-  - name: Download the code from GitHub
-    git:
-      repo: https://github.com/jaymcdaniel83/win-update-01.git
-      dest: C:\Code\install_update
-      version: main
-
   - name: Install Windows Update
     win_shell: .\multi_machine_win_update.ps1 > C:\Code\install_update\install_update.log
     become: yes
