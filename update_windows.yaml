@@ -1,5 +1,5 @@
 - name: Update Windows
-  hosts: ansible-win2k19
+  hosts: windows-hosts
   remote_user: sa_ansible
 
   tasks:
@@ -11,7 +11,7 @@
       version: main
 
   - name: Install Windows Update
-    win_shell: .\win_update_mulit_machine.ps1 > C:\Code\install_update\install_update.log
+    win_shell: .\multi_machine_win_update.ps1 > C:\Code\install_update\install_update.log
     become: yes
     become_method: runas
     args:
