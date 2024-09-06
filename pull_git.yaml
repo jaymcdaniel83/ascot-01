@@ -1,0 +1,13 @@
+- name: Update Windows
+  hosts: windows-hosts
+  remote_user: sa_ansible
+
+  tasks:
+
+    - name: Download the code from GitHub
+      git:
+        repo: https://github.com/jaymcdaniel83/win-update-01.git
+        dest: C:\Code\install_update
+        version: main
+
+# EOF
